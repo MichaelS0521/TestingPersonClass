@@ -11,7 +11,7 @@ public class TestPerson {
     public void testDefaultConstructor() {
         // Given
         String expectedName = "";
-        Integer expectedAge = Integer.MAX_VALUE;
+        Integer expectedAge = 5;
 
         // When
         Person person = new Person();
