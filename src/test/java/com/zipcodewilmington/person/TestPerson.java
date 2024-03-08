@@ -1,6 +1,7 @@
 package com.zipcodewilmington.person;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -10,11 +11,11 @@ public class TestPerson {
     @Test
     public void testDefaultConstructor() {
         // Given
-        String expectedName = "";
+        String expectedName = "Leon";
         Integer expectedAge = 5;
 
         // When
-        Person person = new Person();
+        Person person = new Person(expectedName, expectedAge);
 
         // Then
         String actualName = person.getName();
@@ -94,5 +95,111 @@ public class TestPerson {
         // Then
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHairColor() {
+        // Given
+        Person person = new Person();
+        String expected = "Brown";
+
+        // When
+        person.setHairColor(expected);
+
+        // Then
+        String actual = person.getHairColor();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetEyeColor() {
+        // Given
+        Person person = new Person();
+        String expected = "Hazel";
+
+        // When
+        person.setEyeColor(expected);
+
+        // Then
+        String actual = person.getEyeColor();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetLevelEducation() {
+        // Given
+        Person person = new Person();
+        String expected = "Highschool Diploma";
+
+        // When
+        person.setLevelEducation(expected);
+
+        // Then
+        String actual = person.getLevelEducation();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetIsEmployed() {
+        // Given
+        Person person = new Person();
+        boolean expected = true;
+
+        // When
+        person.setIsEmployed(expected);
+
+        // Then
+        boolean actual = person.getIsEmployed();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHasPets() {
+        // Given
+        Person person = new Person();
+        boolean expected = true;
+
+        // When
+        person.setHasPets(expected);
+
+        // Then
+        boolean actual = person.getHasPets();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testConstructorPerson() {
+        Person person = new Person();
+        String expectedName = "Leon";
+        int expectedAge = 5;
+        String expectedHairColor = "Brown";
+        String expectedEyeColor = "Hazel";
+        String expectedLevelEducation = "Highschool Diploma";
+        boolean expectedIsEmployed = true;
+        boolean expectedHasPets = true;
+
+        person.setName(expectedName);
+        person.setAge(expectedAge);
+        person.setHairColor(expectedHairColor);
+        person.setEyeColor(expectedEyeColor);
+        person.setLevelEducation(expectedLevelEducation);
+        person.setIsEmployed(expectedIsEmployed);
+        person.setHasPets(expectedHasPets);
+
+        String actualName = person.getName();
+        int actualAge = person.getAge();
+        String actualHairColor = person.getHairColor();
+        String actualEyeColor = person.getEyeColor();
+        String actualEducation = person.getLevelEducation();
+        boolean actualEmployment = person.getIsEmployed();
+        boolean actualHasPets = person.getHasPets();
+
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedHairColor, actualHairColor);
+        Assert.assertEquals(expectedEyeColor, actualEyeColor);
+        Assert.assertEquals(expectedLevelEducation, actualEducation);
+        Assert.assertEquals(expectedIsEmployed, actualEmployment);
+        Assert.assertEquals(expectedHasPets, actualHasPets);
     }
 }
